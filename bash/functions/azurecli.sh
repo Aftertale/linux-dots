@@ -10,11 +10,22 @@ function azActivate() {
 }
 
 function azLogin() {
-	az login --allow-no-subscriptions
+	/usr/bin/az login --allow-no-subscriptions
 	cp ~/.azure/azureProfile.json ~/.azureprofiles/dmcdowell.json
 }
 
 function azLoginZ() {
-	az login
+	/usr/bin/az login
 	cp ~/.azure/azureProfile.json ~/.azureprofiles/dmcdowell-z.json
+}
+
+function az() {
+	case "$@" in
+	"login "*)
+		/usr/bin/az login && grab-aks $2
+		;;
+	*)
+		/usr/bin/az "$@"
+		;;
+	esac
 }

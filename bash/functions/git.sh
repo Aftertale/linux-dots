@@ -66,9 +66,12 @@ function git() {
 		/usr/bin/git pr view --web
 		;;
 
-  "pull-request")
-    
-    az repos pr create
+	"pull-request")
+		_getRemoteType &&
+			az repos pr create ||
+			gh pull-request
+		;;
+
 	"unstage")
 		gunstage
 		;;
@@ -89,11 +92,11 @@ function git() {
 
 # determine whether remote is GitHub or ADO
 function _getRemoteType() {
-  adoUrl=$(/usr/bin/git remote get-url origin | awk -F@ '{ print $2 }')
-  if [[ -n $adoUrl ]]; then
-    return 1
-  fi
-  return 0
+	adoUrl=$(/usr/bin/git remote get-url origin | awk -F@ '{ print $2 }')
+	if [[ -n $adoUrl ]]; then
+		return 1
+	fi
+	return 0
 }
 
 function gpr() {
