@@ -1,11 +1,16 @@
 [apt]
+thunar # file manager
 
 [go]
 k9s
 
 [rust]
+[rust.eww]
+flags = ["--release", "--no-default-features", "--features $wm"]
 
 [snap]
 yq
 
 [source]
+
+[make]

@@ -1,0 +1,11 @@
+{
+  "bar": "decorated",
+  "colorscheme": "catppuccin",
+  "terminal": "kitty",
+  "wallpaper_main": "~/Pictures/wallpapers/inventanimate-heavener.jpeg",
+  "wallpaper_sec": "~/Pictures/wallpapers/inventanimate-heavener.jpeg",
+  "with_battery": false,
+  "with_wlan": false,
+  "two_monitors": true,
+  "num_monitors": 4
+}

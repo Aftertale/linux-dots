@@ -1,0 +1,3 @@
+SERIAL_DRIVER = vendor
+
+OLED_ENABLE = true
